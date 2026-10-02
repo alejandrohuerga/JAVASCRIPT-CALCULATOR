@@ -35,48 +35,49 @@ Entrega:
     - Commits pequeños, uno por funcionalidad.
 
 */
+do{
+    var result=NaN;
+    var operationIsValid=false;
+    var otherOperation = false;
 
-var result=NaN;
-var operationIsValid=false;
 
-// Validation of values
-while(isNaN(result) || operationIsValid==false){
-    alert("You must enter numbers as values and one of this operations digits ( + , - , * , / )");
-    // We enter the diferents values using the function window.prompt
-    var num1=prompt("Introduce the first digit");
-    var operation=prompt("Introduce the operation");
+    // Validation of values
+    while(isNaN(result) || operationIsValid==false){
+        alert("You must enter numbers as values and one of this operations digits ( + , - , * , / )");
+        // We enter the diferents values using the function window.prompt
+        var num1=prompt("Introduce the first digit");
+        var operation=prompt("Introduce the operation");
 
-    switch (operation){
-        case "+":
-            operationIsValid =true;
-            break;
-        case "-":
-            operationIsValid =true;
-            break;
-        case "*":
-            operationIsValid =true;
-            break;
-        case "/":
-            operationIsValid =true;
-            break;
-        default:
-            operationIsValid=false;
-            break;
+        switch (operation){
+            case "+":
+                operationIsValid =true;
+                break;
+            case "-":
+                operationIsValid =true;
+                break;
+            case "*":
+                operationIsValid =true;
+                break;
+            case "/":
+                operationIsValid =true;
+                break;
+            default:
+                operationIsValid=false;
+                break;
+        }
+
+        var num2=prompt("Introduce the second digit");
+        num2Convert=Number(num2);
+        num1Convert=Number(num1);
+        result=num1Convert+num2Convert;
     }
-
-    var num2=prompt("Introduce the second digit");
-    num2Convert=Number(num2);
-    num1Convert=Number(num1);
-    result=num1Convert+num2Convert;
-}
-
 
 // Operations
     switch (operation){
         case "+": 
             result=num1Convert + num2Convert;
             if(isNaN(result)){
-                console.log("DYou must enter numbers as values.");
+                console.log("You must enter numbers as values.");
             }else{
                 console.log("The result of "+ num1Convert + " + "+ num2Convert + " = "+add(num1Convert,num2Convert));
             }
@@ -100,7 +101,6 @@ while(isNaN(result) || operationIsValid==false){
             }else{
                 console.log("The result of "+ num1Convert + " x "+ num2Convert + " = "+multiply(num1Convert,num2Convert));
             }
-            
         break;
 
         case "/":
@@ -112,9 +112,12 @@ while(isNaN(result) || operationIsValid==false){
             }
             
         break;
-
-        
     }
+
+    otherOperation=confirm("Do you want to perform another operation?");
+
+}while(otherOperation == true);
+
 
     /**
      * Function that do add operation of two numbers
