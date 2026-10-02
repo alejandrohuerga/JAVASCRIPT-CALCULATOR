@@ -59,7 +59,7 @@ while(isNaN(result)){
             if(isNaN(result)){
                 console.log("DYou must enter numbers as values.");
             }else{
-                console.log("The result of "+ num1Convert + " + "+ num2Convert + " = "+result);
+                console.log("The result of "+ num1Convert + " + "+ num2Convert + " = "+add(num1Convert,num2Convert));
             }
             
         break; 
@@ -69,7 +69,7 @@ while(isNaN(result)){
             if(isNaN(result)){
                 console.log("Debes introducir numeros como valores");
             }else{
-                console.log("The result of "+ num1Convert + " - "+ num2Convert + " = "+result);
+                console.log("The result of "+ num1Convert + " - "+ num2Convert + " = "+substract(num1Convert,num2Convert));
             }
             
         break; 
@@ -79,7 +79,7 @@ while(isNaN(result)){
             if(isNaN(result)){
                 console.log("You must enter numbers as values.");
             }else{
-                console.log("The result of "+ num1Convert + " x "+ num2Convert + " = "+result);
+                console.log("The result of "+ num1Convert + " x "+ num2Convert + " = "+multiply(num1Convert,num2Convert));
             }
             
         break;
@@ -89,7 +89,7 @@ while(isNaN(result)){
                 console.log("ERROR (Cannot divide a number by 0)");
             }else{
                 result=num1Convert/num2Convert;
-                console.log("The result of "+ num1Convert + " / "+ num2Convert + " = "+result);
+                console.log("The result of "+ num1Convert + " / "+ num2Convert + " = "+divide(num1Convert,num2Convert));
             }
             
         break;
@@ -97,4 +97,44 @@ while(isNaN(result)){
         default :
             alert("Wrong operation symbol, please use one of this: + , - , * , /");
         break;
+    }
+
+    /**
+     * Function that do add operation of two numbers
+     * @param {*} num2Convert 
+     * @param {*} num1Convert 
+     * @returns result of the operation (Number)
+     */
+    function add (num2Convert, num1Convert){
+        return num2Convert + num1Convert;
+    }
+
+    /**
+     * Function that do substract operation of two numbers
+     * @param {*} num2Convert 
+     * @param {*} num1Convert 
+     * @returns result of the operation (Number)
+     */
+    function substract (num2Convert, num1Convert){
+        return num2Convert - num1Convert;
+    }
+
+    /**
+     * Function that do multiply operation of two numbers
+     * @param {*} num2Convert 
+     * @param {*} num1Convert 
+     * @returns result of the operation (Number)
+     */
+    function multiply (num2Convert, num1Convert){
+        return num2Convert * num1Convert;
+    }
+
+    /**
+     * Function that do divide operation of two numbers
+     * @param {*} num2Convert 
+     * @param {*} num1Convert 
+     * @returns result of the operation (Number)
+     */
+    function divide (num2Convert, num1Convert){
+        return num2Convert / num1Convert;
     }
