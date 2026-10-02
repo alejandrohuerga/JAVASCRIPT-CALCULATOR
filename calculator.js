@@ -35,11 +35,13 @@ Entrega:
     - Commits pequeños, uno por funcionalidad.
 
 */
-resultado=NaN;
+
+var resultado=NaN;
+
 
 // Validation of values
 while(isNaN(resultado)){
-    alert("You must enter numbers as values.");
+    alert("You must enter numbers as values and one of this operations digits ( + , - , * , / )");
     // We enter the diferents values using the function window.prompt
     var num1=prompt("Introduce the first digit");
     var operacion=prompt("Introduce the operacion");
@@ -50,45 +52,56 @@ while(isNaN(resultado)){
 }
 
 // Operations
+while (operacion != "+" || operacion !="-" || operacion != "*" || operacion!="/"){
+    switch (operacion){
+        case "+": 
+            resultado=num1Convert + num2Convert;
+            if(isNaN(resultado)){
+                console.log("DYou must enter numbers as values.");
+            }else{
+                console.log("The result of "+ num1Convert + " + "+ num2Convert + " = "+resultado);
+            }
+            
+        break; 
 
-switch (operacion){
-    case "+": 
-        resultado=num1Convert + num2Convert;
-        if(isNaN(resultado)){
-            console.log("DYou must enter numbers as values.");
-        }else{
-            console.log("The result of "+ num1Convert + " + "+ num2Convert + " = "+resultado);
-        }
-        
-    break; 
+        case "-": 
+            resultado=num1Convert - num2Convert;
+            if(isNaN(resultado)){
+                console.log("Debes introducir numeros como valores");
+            }else{
+                console.log("The result of "+ num1Convert + " - "+ num2Convert + " = "+resultado);
+            }
+            
+        break; 
 
-    case "-": 
-        resultado=num1Convert - num2Convert;
-        if(isNaN(resultado)){
-            console.log("Debes introducir numeros como valores");
-        }else{
-            console.log("The result of "+ num1Convert + " - "+ num2Convert + " = "+resultado);
-        }
-        
-    break; 
+        case "*":
+            resultado=num1Convert*num2Convert;
+            if(isNaN(resultado)){
+                console.log("You must enter numbers as values.");
+            }else{
+                console.log("The result of "+ num1Convert + " x "+ num2Convert + " = "+resultado);
+            }
+            
+        break;
 
-    case "*":
-        resultado=num1Convert*num2Convert;
-        if(isNaN(resultado)){
-            console.log("You must enter numbers as values.");
-        }else{
-            console.log("The result of "+ num1Convert + " x "+ num2Convert + " = "+resultado);
-        }
-        
-    break;
+        case "/":
+            if(num2Convert == 0){
+                console.log("ERROR (Cannot divide a number by 0)");
+            }else{
+                resultado=num1Convert/num2Convert;
+                console.log("The result of "+ num1Convert + " / "+ num2Convert + " = "+resultado);
+            }
+            
+        break;
 
-    case "/":
-        if(num2Convert == 0){
-            console.log("ERROR (Cannot divide a number by 0)");
-        }else{
-            resultado=num1Convert/num2Convert;
-            console.log("The result of "+ num1Convert + " / "+ num2Convert + " = "+resultado);
-        }
-        
-    break;
+        default :
+            alert("Wrong operation symbol, please use one of this: + , - , * , /");
+            num1=prompt("Introduce the first digit");
+            operacion=prompt("Introduce the operacion");
+            num2=prompt("Introduce the second digit");
+            num2Convert=Number(num2);
+            num1Convert=Number(num1);
+            resultado=num1Convert+num2Convert;
+        break;
+    }
 }
