@@ -73,6 +73,9 @@ do{
     }
 
 // Operations
+
+// QUITAR LOS isNAN YA QUE NO SE UTILIZAN NUNCA
+
     switch (operation){
         case "+": 
             result=num1Convert + num2Convert;
