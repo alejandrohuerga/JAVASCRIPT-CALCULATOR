@@ -35,22 +35,18 @@ Entrega:
     - Commits pequeños, uno por funcionalidad.
 
 */
-
-// We enter the diferents values using the function window.prompt
-
-var num1=prompt("Introduce el primer digito");
-var operacion=prompt("Introduce la operacion");
-var num2=prompt("Introduce el segundo numero");
-var resultado = 0;
-
-// Parsing values of num1 and num2 to number
-num2Convert=Number(num2);
-num1Convert=Number(num1);
-
+resultado=NaN;
 
 // Validation of values
-if(isNaN(resultado)){
-    console.log("Debes introducir numeros como valores");
+while(isNaN(resultado)){
+    alert("You must enter numbers as values.");
+    // We enter the diferents values using the function window.prompt
+    var num1=prompt("Introduce the first digit");
+    var operacion=prompt("Introduce the operacion");
+    var num2=prompt("Introduce the second digit");
+    num2Convert=Number(num2);
+    num1Convert=Number(num1);
+    resultado=num1Convert+num2Convert;
 }
 
 // Operations
@@ -59,9 +55,9 @@ switch (operacion){
     case "+": 
         resultado=num1Convert + num2Convert;
         if(isNaN(resultado)){
-            console.log("Debes introducir numeros como valores");
+            console.log("DYou must enter numbers as values.");
         }else{
-            console.log("El resultado de "+ num1Convert + " + "+ num2Convert + " = "+resultado);
+            console.log("The result of "+ num1Convert + " + "+ num2Convert + " = "+resultado);
         }
         
     break; 
@@ -71,7 +67,7 @@ switch (operacion){
         if(isNaN(resultado)){
             console.log("Debes introducir numeros como valores");
         }else{
-            console.log("El resultado de "+ num1Convert + " - "+ num2Convert + " = "+resultado);
+            console.log("The result of "+ num1Convert + " - "+ num2Convert + " = "+resultado);
         }
         
     break; 
@@ -79,15 +75,20 @@ switch (operacion){
     case "*":
         resultado=num1Convert*num2Convert;
         if(isNaN(resultado)){
-            console.log("Debes introducir numeros como valores");
+            console.log("You must enter numbers as values.");
         }else{
-            console.log("El resultado de "+ num1Convert + " x "+ num2Convert + " = "+resultado);
+            console.log("The result of "+ num1Convert + " x "+ num2Convert + " = "+resultado);
         }
         
     break;
 
     case "/":
-        resultado=num1Convert/num2Convert;
-        console.log("El resultado de "+ num1Convert + " / "+ num2Convert + " = "+resultado);
+        if(num2Convert == 0){
+            console.log("ERROR (Cannot divide a number by 0)");
+        }else{
+            resultado=num1Convert/num2Convert;
+            console.log("The result of "+ num1Convert + " / "+ num2Convert + " = "+resultado);
+        }
+        
     break;
 }
