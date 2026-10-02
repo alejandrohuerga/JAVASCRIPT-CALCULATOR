@@ -37,7 +37,7 @@ Entrega:
 */
 
 var result=NaN;
-
+var operationIsValid=true;
 
 // Validation of values
 while(isNaN(result)){
@@ -51,8 +51,8 @@ while(isNaN(result)){
     result=num1Convert+num2Convert;
 }
 
+
 // Operations
-while (operation != "+" || operation !="-" || operation != "*" || operation!="/"){
     switch (operation){
         case "+": 
             result=num1Convert + num2Convert;
@@ -96,12 +96,5 @@ while (operation != "+" || operation !="-" || operation != "*" || operation!="/"
 
         default :
             alert("Wrong operation symbol, please use one of this: + , - , * , /");
-            num1=prompt("Introduce the first digit");
-            operation=prompt("Introduce the operation");
-            num2=prompt("Introduce the second digit");
-            num2Convert=Number(num2);
-            num1Convert=Number(num1);
-            result=num1Convert+num2Convert;
         break;
     }
-}
