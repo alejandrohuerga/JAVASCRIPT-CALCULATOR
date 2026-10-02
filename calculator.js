@@ -37,14 +37,33 @@ Entrega:
 */
 
 var result=NaN;
-var operationIsValid=true;
+var operationIsValid=false;
 
 // Validation of values
-while(isNaN(result)){
+while(isNaN(result) || operationIsValid==false){
     alert("You must enter numbers as values and one of this operations digits ( + , - , * , / )");
     // We enter the diferents values using the function window.prompt
     var num1=prompt("Introduce the first digit");
     var operation=prompt("Introduce the operation");
+
+    switch (operation){
+        case "+":
+            operationIsValid =true;
+            break;
+        case "-":
+            operationIsValid =true;
+            break;
+        case "*":
+            operationIsValid =true;
+            break;
+        case "/":
+            operationIsValid =true;
+            break;
+        default:
+            operationIsValid=false;
+            break;
+    }
+
     var num2=prompt("Introduce the second digit");
     num2Convert=Number(num2);
     num1Convert=Number(num1);
@@ -94,9 +113,7 @@ while(isNaN(result)){
             
         break;
 
-        default :
-            alert("Wrong operation symbol, please use one of this: + , - , * , /");
-        break;
+        
     }
 
     /**
