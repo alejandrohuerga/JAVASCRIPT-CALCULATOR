@@ -35,3 +35,59 @@ Entrega:
     - Commits pequeños, uno por funcionalidad.
 
 */
+
+// We enter the diferents values using the function window.prompt
+
+var num1=prompt("Introduce el primer digito");
+var operacion=prompt("Introduce la operacion");
+var num2=prompt("Introduce el segundo numero");
+var resultado = 0;
+
+// Parsing values of num1 and num2 to number
+num2Convert=Number(num2);
+num1Convert=Number(num1);
+
+
+// Validation of values
+if(isNaN(resultado)){
+    console.log("Debes introducir numeros como valores");
+}
+
+// Operations
+
+switch (operacion){
+    case "+": 
+        resultado=num1Convert + num2Convert;
+        if(isNaN(resultado)){
+            console.log("Debes introducir numeros como valores");
+        }else{
+            console.log("El resultado de "+ num1Convert + " + "+ num2Convert + " = "+resultado);
+        }
+        
+    break; 
+
+    case "-": 
+        resultado=num1Convert - num2Convert;
+        if(isNaN(resultado)){
+            console.log("Debes introducir numeros como valores");
+        }else{
+            console.log("El resultado de "+ num1Convert + " - "+ num2Convert + " = "+resultado);
+        }
+        
+    break; 
+
+    case "*":
+        resultado=num1Convert*num2Convert;
+        if(isNaN(resultado)){
+            console.log("Debes introducir numeros como valores");
+        }else{
+            console.log("El resultado de "+ num1Convert + " x "+ num2Convert + " = "+resultado);
+        }
+        
+    break;
+
+    case "/":
+        resultado=num1Convert/num2Convert;
+        console.log("El resultado de "+ num1Convert + " / "+ num2Convert + " = "+resultado);
+    break;
+}
